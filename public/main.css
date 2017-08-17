@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#container {
+    margin: 8px;
+}
+
+#header {
+    padding: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    font-weight: 400;
+}

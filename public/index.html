@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prediction</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet"> 
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div id="header">
+      <h1>Prediction</h1>
+    </div>
+
+    <div id="container">
+		<div id="overview" style="visibility: hidden">
+			<h2>Project: <span id="project"></span></h2>
+
+			<p>Sprint #<span id="sprint"></span></p>
+			<p>Prediction: <span id="prediction">
+				<span id="prediction-0">all OK</span>
+				<span id="prediction-1">risks exist</span>
+			</span></p>
+			<p>Reliability: <span id="probability">%</span></p>
+			<p>Risk: <span id="risk">%</span></p>
+			<div class="group">Metrics <ul id="metrics"></ul></div>
+			<div class="group">Configuration <ul id="configuration"></ul></div>
+		</div>
+    </div>
+
+    <script src="bundle.js"></script>
+  </body>
+</html>
