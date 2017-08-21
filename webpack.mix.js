@@ -1,7 +1,11 @@
 let mix = require('laravel-mix');
 
 mix.setPublicPath('public/')
-    .js('lib/index.js', 'public/bundle.js');
+    .js('lib/index.js', 'public/bundle.js')
+    .browserSync({
+        proxy: false,
+        server: 'public'
+    });;
 
 // Full API
 // mix.js(src, output);
