@@ -3,28 +3,113 @@
   <head>
     <title>Prediction</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.4.0/balloon.min.css">
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
     <div id="header">
-      <h1>Prediction</h1>
+      <div class="container">
+        <h1 class="title">Prediction</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="error-message" class="notification is-danger" style="display: none"></div>
     </div>
 
     <div id="container">
-		<div id="overview" style="visibility: hidden">
-			<h2>Project: <span id="project"></span></h2>
+      <div id="overview" style="display: none">
+        <div class="container">
+          <section class="section">
+            <h2 class="title"><span id="project"></span></h2>
+            <h3 class="subtitle">Sprint #<span id="sprint"></span></h3>
 
-			<p>Sprint #<span id="sprint"></span></p>
-			<p>Prediction: <span id="prediction">
-				<span id="prediction-0">all OK</span>
-				<span id="prediction-1">risks exist</span>
-			</span></p>
-			<p>Reliability: <span id="probability">%</span></p>
-			<p>Risk: <span id="risk">%</span></p>
-			<div class="group">Metrics <ul id="metrics"></ul></div>
-			<div class="group">Configuration <ul id="configuration"></ul></div>
-		</div>
+            <div class="columns">
+              <div class="column is-one-quarter">
+                <article class="prediction message">
+                  <div class="message-header">
+                    <p>Prediction</p>
+                  </div>
+                  <div class="message-body">
+                    <span id="prediction">
+                    <span id="prediction-0">All OK</span>
+                    <span id="prediction-1">Risks exist</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="columns">
+              <div class="column is-half">
+                <p>
+                  Risk 
+                  <span
+                    class="icon is-small"
+                    data-balloon="Percentage that indicates the risk associated with the current sprint, i.e., whether it is going to end with
+                     the predicted classification. This is based on internal activations of the model, with a scale that is
+                     normalized outside of the model, in contrast to the other metrics."
+                    data-balloon-pos="up"
+                    data-balloon-length="large"
+                    >
+                    <i class="fa fa-info-circle"></i>
+                  </span>
+                  <progress id="risk" class="progress" value="0" max="100"></progress>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <p>Reliability
+                <span
+                  class="icon is-small"
+                  data-balloon="Percentage of reliability of the prediction according to the model itself. This value is strongly dependent on the
+                   model's behavior, especially how many steps it has been trained. For example, during a long training step,
+                   this almost always is 100."
+                  data-balloon-pos="up"
+                  data-balloon-length="large"
+                  >
+                  <i class="fa fa-info-circle"></i>
+                </span>
+
+              <span id="probability">%</span></p>
+          </section>
+
+          <section class="section">
+            <div class="columns">
+              <div class="column">
+                <h2 class="subtitle">Metrics</h2>
+
+                <table id="metrics" class="table is-bordered">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Value</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <div class="column">
+                <h2 class="subtitle">Configuration</h2>
+
+                <table id="configuration" class="table is-bordered">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Value</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
 
     <script src="bundle.js"></script>

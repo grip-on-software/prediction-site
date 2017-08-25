@@ -1,15 +1,13 @@
 body {
-    margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
-#container {
-    margin: 8px;
-}
-
 #header {
-    padding: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;    
     border-bottom: 1px solid #eee;
     font-weight: 400;
+}
+
+#header h1 {
+    padding: 1.5rem;
 }
