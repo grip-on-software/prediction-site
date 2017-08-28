@@ -11,3 +11,7 @@ body {
 #header h1 {
     padding: 1.5rem;
 }
+
+.section.is-small {
+    padding: 1.5rem;
+}
