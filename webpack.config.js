@@ -1,4 +1,5 @@
 let path = require('path');
+let fs = require('fs');
 let glob = require('glob');
 let webpack = require('webpack');
 let Mix = require('laravel-mix').config;
@@ -215,11 +216,17 @@ module.exports.module = { rules };
  |
  */
 
+let config = path.resolve(__dirname, 'config.json');
+if (!fs.existsSync(config)) {
+    config = path.resolve(__dirname, 'lib/config.json');
+}
+
 module.exports.resolve = {
     extensions: ['*', '.js', '.jsx', '.vue'],
 
     alias: {
-        'vue$': 'vue/dist/vue.common.js'
+        'vue$': 'vue/dist/vue.common.js',
+        'config.json$': config
     }
 };
 
