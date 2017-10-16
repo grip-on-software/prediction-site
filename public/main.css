@@ -15,3 +15,7 @@ body {
 .section.is-small {
     padding: 1.5rem;
 }
+
+#files a {
+	display: block;
+}
