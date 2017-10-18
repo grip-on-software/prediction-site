@@ -1,0 +1,8 @@
+bundle.js
+bundle.js.map
+node_modules
+data/
+public/data
+.dockerignore
+.gitignore
+Jenkinsfile
