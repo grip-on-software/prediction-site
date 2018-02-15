@@ -33,6 +33,9 @@
           <section class="section">
             <h2 class="title"><span id="project"></span></h2>
             <h3 class="subtitle">Sprint #<span id="sprint"></span></h3>
+            <p>
+              <a id="name" data-link-config="jira_url" data-link-value="id"></a>
+            </p>
 
             <div class="columns">
               <div class="column is-one-quarter">
@@ -42,8 +45,9 @@
                   </div>
                   <div class="message-body">
                     <span id="prediction">
-                    <span id="prediction-0">All OK</span>
-                    <span id="prediction-1">Risks exist</span>
+                      <span id="prediction-0">All OK</span>
+                      <span id="prediction-1">Risks exist</span>
+                    </span>
                   </div>
                 </article>
               </div>
@@ -119,13 +123,13 @@
       </div>
     </div>
 
-	<div class="container">
-	  <section class="section">
-	  	<h2 id="files-title" class="subtitle is-hidden">Documents</h2>
+    <div class="container">
+      <section class="section">
+        <h2 id="files-title" class="subtitle is-hidden">Documents</h2>
         <div id="files-error-message" class="notification is-danger is-hidden"></div>
-		<div id="files"></div>
-	  </section>
-	</div>
+        <div id="files"></div>
+      </section>
+    </div>
 
     <script src="bundle.js"></script>
   </body>
