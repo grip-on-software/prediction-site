@@ -33,20 +33,20 @@
           <section class="section">
             <h2 class="title"><span id="project"></span></h2>
             <h3 class="subtitle">Sprint #<span id="sprint"></span></h3>
-            <p>
-              <a id="name" data-link-config="jira_url" data-link-value="id"></a>
-            </p>
+            <h4 class="subtitle">
+              <a id="name" data-link-config="jira_url" data-link-value="id"></a> (<span id="start_date"></span> - <span id="end_date"></span>)
+            </h4>
 
             <div class="columns">
-              <div class="column is-one-quarter">
-                <article class="prediction message">
+              <div class="column is-one-quarter" data-show="prediction">
+                <article id="message-prediction" class="message is-primary">
                   <div class="message-header">
                     <p>Prediction</p>
                   </div>
                   <div class="message-body">
                     <span id="prediction">
-                      <span id="prediction-0">All OK</span>
-                      <span id="prediction-1">Risks exist</span>
+                      <span id="prediction-0" class="is-success">All OK</span>
+                      <span id="prediction-1" class="is-warning">Risks exist</span>
                     </span>
                   </div>
                 </article>
@@ -54,7 +54,7 @@
             </div>
 
             <div class="columns">
-              <div class="column is-half">
+              <div class="column is-half" data-show="risk">
                 <p>
                   Risk 
                   <span
@@ -73,7 +73,7 @@
             </div>
           </section>
 
-          <section class="section">
+          <section class="section" data-show="probability">
             <p>Reliability
                 <span
                   class="icon is-small"
@@ -91,7 +91,26 @@
 
           <section class="section">
             <div class="columns">
-              <div class="column">
+              <div class="column" data-show="analogies">
+                <h2 class="subtitle">Similar sprints</h2>
+
+				<div class="content">
+                  This sprint was given the prediction shown because the
+                  selected features are most similar to the features of
+                  the following sprints:
+                  <ul id="analogies">
+                    <li id="analogies-template">
+                      Sprint #<span class="item-sprint"></span>:
+                      <a class="item-name" data-link-config="jira_url" data-link-value="id"></a>
+                      (<span class="item-start_date"></span> -
+                      <span class="item-end_date"></span>)
+                      from project <a class="item-project" data-link-config="navLink" data-link-value="project_id"></a>
+                      which has the actual value <span class="item-label"></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="column" data-show="metrics">
                 <h2 class="subtitle">Metrics</h2>
 
                 <table id="metrics" class="table is-bordered">

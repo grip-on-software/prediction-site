@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
-    "d3": "^4.8.0",
+    "d3": "^4.13.0",
     "javascript-natural-sort": "^0.7.1",
-    "mimetype-to-fontawesome": "^1.0.2"
+    "mimetype-to-fontawesome": "^1.0.2",
+    "moment": "^2.20.1"
   }
 }
