@@ -4,5 +4,6 @@ bundle.js.map
 node_modules
 data/
 public/data
+public/main.css
 public/mix-manifest.json
 public/hot

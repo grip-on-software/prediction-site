@@ -1,0 +1,54 @@
+{
+    "nl": {
+        "language": "Nederlands",
+        "messages": {
+            "prediction-title": "Voorspelling",
+            "prediction-header": "Voorspelling",
+            "prediction-ok": "Alles OK",
+            "prediction-warning": "Risicovol",
+            "risk-header": "Risico",
+            "reliability-header": "Betrouwbaarheid",
+            "analogies-header": "Vergelijkbare sprints",
+            "analogies-content": "Deze sprint heeft de getoonde voorspelling gekregen omdat de geselecteerde attributen heeft meest lijken op de attributen van de volgende sprints: %s",
+            "analogies-sprint": "Sprint #%s: %s (%s - %s) van project %s welke de daadwerkelijke waarde %s heeft",
+            "metrics-header": "Metrieken",
+            "metrics-name": "Naam",
+            "metrics-value": "Waarde",
+            "configuration-header": "Configuratie",
+            "configuration-name": "Naam",
+            "configuration-value": "Waarde",
+            "files-header": "Documenten",
+            "sprint-subtitle": "Sprint #%s",
+            "sprint-view": "Sprint bekijken (als je toegang hebt)",
+            "error-files": "Kon bestandenlijst niet laden: %s",
+            "error-prediction": "Kon voorspellingsgegevens niet laden: %s",
+            "error-projects": "Kon projectlijst niet laden: %s"
+        }
+    },
+    "en": {
+        "language": "English",
+        "messages": {
+            "prediction-title": "Prediction",
+            "prediction-header": "Prediction",
+            "prediction-ok": "All OK",
+            "prediction-warning": "Risks exist",
+            "risk-header": "Risks",
+            "reliability-header": "Reliability",
+            "analogies-header": "Similar sprints",
+            "analogies-content": "This sprint was given the prediction shown because the selected features are most similar to the features of the following sprints: %s",
+            "analogies-sprint": "Sprint #%s: %s (%s - %s) from project %s which has the actual value %s",
+            "metrics-header": "Metrics",
+            "metrics-name": "Name",
+            "metrics-value": "Value",
+            "configuration-header": "Configuration",
+            "configuration-name": "Name",
+            "configuration-value": "Value",
+            "files-header": "Documents",
+            "sprint-subtitle": "Sprint #%s",
+            "sprint-view:": "View sprint (if you have access)",
+            "error-files": "Could not load files list: %s",
+            "error-prediction": "Could not load prediction data: %s",
+            "error-projects": "Could not load projects list: %s"
+        }
+    }
+}

@@ -23,7 +23,7 @@ pipeline {
         stage('Build') {
             steps {
                 updateGitlabCommitStatus name: env.JOB_NAME, state: 'running'
-                sh 'docker build -t $DOCKER_REGISTRY/gros-prediction-site .'
+                sh 'docker build -t $DOCKER_REGISTRY/gros-prediction-site .  --build-arg NPM_REGISTRY=$NPM_REGISTRY'
             }
         }
         stage('Push') {
@@ -44,7 +44,7 @@ pipeline {
                     sh 'cp $PREDICTION_CONFIGURATION config.json'
                     sh 'rm -rf node_modules/'
                     sh 'ln -s /usr/src/app/node_modules .'
-                    sh 'npm run production -- --context=$PWD'
+                    sh 'npm run production -- --env.mixfile=$PWD/webpack.mix.js'
                 }
             }
         }
