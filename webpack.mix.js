@@ -20,6 +20,7 @@ mix.setPublicPath('public/')
         ]
     })
     .webpackConfig({
+        devtool: 'source-map',
         resolve: {
             alias: {
                 'config.json$': config

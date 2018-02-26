@@ -7,3 +7,4 @@ public/data
 public/main.css
 public/mix-manifest.json
 public/hot
+public/*.map

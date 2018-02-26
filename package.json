@@ -20,6 +20,7 @@
     "javascript-natural-sort": "^0.7.1",
     "lodash": "^4.17.5",
     "mimetype-to-fontawesome": "^1.0.2",
-    "moment": "^2.20.1"
+    "moment": "^2.20.1",
+    "sprintf-js": "^1.1.1"
   }
 }

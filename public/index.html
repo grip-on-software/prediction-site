@@ -34,60 +34,81 @@
           <section class="section">
             <h2 class="title"><span id="project"></span></h2>
             <h3 class="subtitle" data-message="sprint-subtitle">Sprint #<span id="sprint"></span></h3>
-            <h4 class="subtitle">
-              <a id="name" data-link-config="jira_url" data-link-value="id" title="View sprint (if you have access)"></a> (<span id="start_date"></span> - <span id="end_date"></span>)
-            </h4>
 
             <div class="columns">
-              <div class="column is-one-quarter" data-show="prediction">
-                <article id="message-prediction" class="message is-primary">
-                  <div class="message-header">
-                    <p data-message="prediction-header">Prediction</p>
+              <div class="column is-half">
+                <h4 class="subtitle">
+                  <a id="name" data-link-config="jira_url" data-link-value="id" data-message-title="sprint-view"></a> (<span id="start_date"></span> - <span id="end_date"></span>)
+                </h4>
+
+                <div class="columns">
+                  <div class="column is-half" data-show="prediction">
+                    <article id="message-prediction" class="message is-primary">
+                      <div class="message-header">
+                        <p data-message="prediction-header">Prediction</p>
+                      </div>
+                      <div class="message-body">
+                        <span id="prediction">
+                          <span id="prediction-0" class="is-success" data-message="prediction-ok">All OK</span>
+                          <span id="prediction-1" class="is-warning" data-message="prediction-warning">Risks exist</span>
+                        </span>
+                      </div>
+                    </article>
                   </div>
-                  <div class="message-body">
-                    <span id="prediction">
-                      <span id="prediction-0" class="is-success" data-message="prediction-ok">All OK</span>
-                      <span id="prediction-1" class="is-warning" data-message="prediction-warning">Risks exist</span>
+                </div>
+
+                <div class="columns">
+                  <div class="column is-three-quarters">
+                    <article class="section" data-show="risk">
+                      <p data-message="risk-header">
+                        Risk 
+                        <span
+                          class="icon is-small"
+                          data-balloon="Percentage that indicates the risk associated with the current sprint, i.e., whether it is going to end with
+                           the predicted classification. This is based on internal activations of the model, with a scale that is
+                           normalized outside of the model, in contrast to the other metrics."
+                          data-balloon-pos="up"
+                          data-balloon-length="large"
+                          >
+                          <i class="fa fa-info-circle"></i>
+                        </span>
+                        <progress id="risk" class="progress" value="0" max="100">0%</progress>
+                      </p>
+                    </article>
+                  </div>
+                </div>
+
+                <article class="section" data-show="probability">
+                  <p data-message="reliability-header">Reliability
+                    <span
+                      class="icon is-small"
+                      data-balloon="Percentage of reliability of the prediction according to the model itself. This value is strongly dependent on the
+                       model's behavior, especially how many steps it has been trained. For example, during a long training step,
+                       this almost always is 100."
+                      data-balloon-pos="up"
+                      data-balloon-length="large"
+                      >
+                      <i class="fa fa-info-circle"></i>
                     </span>
-                  </div>
+
+                    <span id="probability">%</span>
+                  </p>
                 </article>
               </div>
-            </div>
+              <div class="column is-half" data-show="features">
+                <h2 class="subtitle" data-message="features-header">Features</h2>
 
-            <div class="columns">
-              <div class="column is-half" data-show="risk">
-                <p data-message="risk-header">
-                  Risk 
-                  <span
-                    class="icon is-small"
-                    data-balloon="Percentage that indicates the risk associated with the current sprint, i.e., whether it is going to end with
-                     the predicted classification. This is based on internal activations of the model, with a scale that is
-                     normalized outside of the model, in contrast to the other metrics."
-                    data-balloon-pos="up"
-                    data-balloon-length="large"
-                    >
-                    <i class="fa fa-info-circle"></i>
-                  </span>
-                  <progress id="risk" class="progress" value="0" max="100">0%</progress>
-                </p>
+                <table id="features" class="table is-bordered" data-localization="features">
+                  <thead>
+                    <tr>
+                      <th data-message="features-name">Name</th>
+                      <th data-message="features-value">Value</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
               </div>
             </div>
-          </section>
-
-          <section class="section" data-show="probability">
-            <p data-message="reliability">Reliability
-                <span
-                  class="icon is-small"
-                  data-balloon="Percentage of reliability of the prediction according to the model itself. This value is strongly dependent on the
-                   model's behavior, especially how many steps it has been trained. For example, during a long training step,
-                   this almost always is 100."
-                  data-balloon-pos="up"
-                  data-balloon-length="large"
-                  >
-                  <i class="fa fa-info-circle"></i>
-                </span>
-
-              <span id="probability">%</span></p>
           </section>
 
           <section class="section">
@@ -99,11 +120,12 @@
                   <ul id="analogies">
                     <li id="analogies-template" data-message="analogies-sprint">
                       Sprint #<span class="item-sprint"></span>:
-                      <a class="item-name" data-link-config="jira_url" data-link-value="id" title="View sprint (if you have access)"></a>
+                      <a class="item-name" data-link-config="jira_url" data-link-value="id" data-message-title="sprint-view"></a>
                       (<span class="item-start_date"></span> -
                       <span class="item-end_date"></span>)
-                      from project <a class="item-project" data-link-config="navLink" data-link-value="project_id" title="View most recent sprint of this project"></a>
+                      from project <a class="item-project" data-link-config="navLink" data-link-value="project_id" data-message-title="sprint-project"></a>
                       which has the actual value <span class="item-label"></span>
+                      and the features <span class="item-features" data-localization="units">?</span>
                     </li>
                   </ul>
                 </div>
