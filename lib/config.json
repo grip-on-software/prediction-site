@@ -1,6 +1,9 @@
 {
     "hostname": "",
     "language": "en",
+    "branches": "",
+    "branch_url": "",
+    "master_url": "",
     "files": "",
     "jira_url": ""
 }
