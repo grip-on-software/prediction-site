@@ -32,6 +32,13 @@ pipeline {
                 sh 'docker push $DOCKER_REGISTRY/gros-prediction-site:latest'
             }
         }
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.branch=$BRANCH_NAME'
+                }
+            }
+        }
         stage('Visualize') {
             agent {
                 docker {
