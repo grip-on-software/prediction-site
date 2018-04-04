@@ -1,9 +1,11 @@
 {
-    "hostname": "",
+    "visualization_url": "",
+    "prediction_url": "",
+    "path": ".",
     "language": "en",
-    "branches": "",
-    "branch_url": "",
-    "master_url": "",
-    "files": "",
+    "branches_url": "/branches",
+    "branch_url": "/branch",
+    "master_url": "/show",
+    "files_url": "/files",
     "jira_url": ""
 }
