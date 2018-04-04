@@ -1,4 +1,8 @@
+@import "node_modules/@fortawesome/fontawesome-free-webfonts/scss/fontawesome";
+@import "node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-regular";
+@import "node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-solid";
 @import "node_modules/bulma/bulma";
+@import "node_modules/balloon-css/src/balloon";
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -12,23 +16,6 @@ body {
 
 #header h1 {
     padding: 1.5rem;
-}
-
-#languages {
-    font-size: .8rem;
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-}
-
-#languages li {
-    list-style: none;
-}
-#languages li.is-active::before {
-    content: "\232A\00A0";
-}
-#languages li.is-active a {
-    color: #000000;
 }
 
 .tabs ul {

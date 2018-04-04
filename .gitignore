@@ -6,6 +6,8 @@ data/
 public/data
 public/branches
 public/files
+public/fonts
+public/index.html
 public/main.css
 public/mix-manifest.json
 public/hot
