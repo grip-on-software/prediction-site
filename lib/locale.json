@@ -27,7 +27,8 @@
             "error-files": "Kon bestandenlijst niet laden: %s",
             "error-prediction": "Kon voorspellingsgegevens niet laden: %s",
             "error-projects": "Kon projectlijst niet laden: %s",
-            "branches-dropdown": "Branches"
+            "branches-dropdown": "Experiments",
+            "branches-dropdown-title": "View results from other experiments"
         }
     },
     "en": {
@@ -58,7 +59,8 @@
             "error-files": "Could not load files list: %s",
             "error-prediction": "Could not load prediction data: %s",
             "error-projects": "Could not load projects list: %s",
-            "branches-dropdown": "Branches"
+            "branches-dropdown": "Experimenten",
+            "branches-dropdown-title": "Resultaten van andere experimenten bekijken"
         }
     }
 }
