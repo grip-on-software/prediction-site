@@ -30,6 +30,13 @@ article.section {
     padding: 1.5rem 0 1.5rem 0;
 }
 
+#branches a.dropdown-item span:not(.branch) {
+	white-space: normal;
+}
+#branches a.dropdown-item span {
+	padding-left: .5ch;
+}
+
 #files a {
     display: block;
 }
