@@ -1,6 +1,6 @@
 bundle.js
 bundle.js.map
-/config.json
+/config*.json
 node_modules
 data/
 public/data
