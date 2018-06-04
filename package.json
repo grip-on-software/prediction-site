@@ -25,6 +25,7 @@
     "lodash": "^4.17.5",
     "mimetype-to-fontawesome": "^1.0.2",
     "moment": "^2.20.1",
+    "mustache": "^2.3.0",
     "sprintf-js": "^1.1.1"
   }
 }
