@@ -31,7 +31,8 @@
             "branches-dropdown-title": "Resultaten van andere experimenten bekijken",
             "branch-default": "(standaard)",
             "branch-labels": "(%s)",
-            "branch-same-name": "(%s)"
+            "branch-same-name": "(%s)",
+            "source-link": "Naar de bron van deze eigenschap gaan"
         },
         "models": {
             "abe": "Analogie-gebaseerde inspanningsschatting",
@@ -70,7 +71,8 @@
             "branches-dropdown-title": "View results from other experiments",
             "branch-default": "(default)",
             "branch-labels": "(%s)",
-            "branch-same-name": "(%s)"
+            "branch-same-name": "(%s)",
+            "source-link": "Visit the source of this feature"
         },
         "models": {
             "abe": "Analogy-based effort estimation",
