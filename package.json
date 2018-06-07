@@ -14,7 +14,7 @@
     "mustache-loader": "^1.4.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free-webfonts": "^1.0.5",
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@gros/visualization-ui": "^0.4.2",
     "axios": "^0.16.1",
     "balloon-css": "^0.5.0",

@@ -76,9 +76,9 @@
                   </div>
                 </div>
 
-                <div class="columns">
+                <div class="columns" data-show="risk">
                   <div class="column is-three-quarters">
-                    <article class="section" data-show="risk">
+                    <article class="section">
                       <p data-message="risk-header">
                         Risk 
                         <span
@@ -112,6 +112,19 @@
 
                     <span id="probability">%</span>
                   </p>
+                </article>
+
+                <article class="section" data-show="sources">
+                  <p data-message="sources-header">Source age</p>
+                  <table id="sources" class="table is-bordered" data-localization="sources">
+                    <thead>
+                      <tr>
+                        <th data-message="source-name">Name</th>
+                        <th data-message="source-value">Age</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
                 </article>
               </div>
               <div class="column is-half" data-show="features">

@@ -32,7 +32,10 @@
             "branch-default": "(standaard)",
             "branch-labels": "(%s)",
             "branch-same-name": "(%s)",
-            "source-link": "Naar de bron van deze eigenschap gaan"
+            "source-link": "Naar de bron van deze eigenschap gaan",
+            "sources-header": "Bronouderdom",
+            "source-name": "Bron",
+            "source-value": "Laatste update"
         },
         "models": {
             "abe": "Analogie-gebaseerde inspanningsschatting",
@@ -72,7 +75,10 @@
             "branch-default": "(default)",
             "branch-labels": "(%s)",
             "branch-same-name": "(%s)",
-            "source-link": "Visit the source of this feature"
+            "source-link": "Visit the source of this feature",
+            "sources-header": "Source age",
+            "source-name": "Source",
+            "source-value": "Last update"
         },
         "models": {
             "abe": "Analogy-based effort estimation",
