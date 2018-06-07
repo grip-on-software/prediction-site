@@ -35,11 +35,21 @@
             "source-link": "Naar de bron van deze eigenschap gaan",
             "sources-header": "Bronouderdom",
             "source-name": "Bron",
-            "source-value": "Laatste update"
+            "source-value": "Laatste update",
+            "boolean-yes": "Ja",
+            "boolean-no": "Nee"
         },
-        "models": {
+        "model": {
             "abe": "Analogie-gebaseerde inspanningsschatting",
             "dnn": "Diep neuraal netwerk"
+        },
+        "configuration": {
+            "weighted": "Herbalanceren",
+            "stratified": "Stratificatie",
+            "features": "Attributen",
+            "model": "Model",
+            "labels": "Doelwaarde",
+            "label": "Verwachting"
         }
     },
     "en": {
@@ -51,7 +61,7 @@
             "prediction-warning": "Risks exist",
             "risk-header": "Risk %s %s",
             "reliability-header": "Reliability %s %s",
-            "features-header": "Features",
+            "features-header": "Attributes",
             "features-name": "Name",
             "features-value": "Value",
             "analogies-header": "Similar sprints",
@@ -78,11 +88,21 @@
             "source-link": "Visit the source of this feature",
             "sources-header": "Source age",
             "source-name": "Source",
-            "source-value": "Last update"
+            "source-value": "Last update",
+            "boolean-yes": "Yes",
+            "boolean-no": "No"
         },
-        "models": {
+        "model": {
             "abe": "Analogy-based effort estimation",
             "dnn": "Deep neural network"
+        },
+        "configuration": {
+            "weighted": "Rebalancing",
+            "stratified": "Stratification",
+            "features": "Attributes",
+            "model": "Model",
+            "labels": "Target",
+            "label": "Expectation"
         }
     }
 }
