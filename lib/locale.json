@@ -24,6 +24,7 @@
             "sprint-subtitle": "Sprint #%s",
             "sprint-project": "Meest recente sprint van dit project bekijken",
             "sprint-view": "Sprint bekijken (als je toegang hebt)",
+            "project-title": "Voorspelling voor nieuwste sprint van project %s bekijken",
             "error-files": "Kon bestandenlijst niet laden: %s",
             "error-prediction": "Kon voorspellingsgegevens niet laden: %s",
             "error-projects": "Kon projectlijst niet laden: %s",
@@ -50,6 +51,12 @@
             "model": "Model",
             "labels": "Doelwaarde",
             "label": "Verwachting"
+        },
+        "project-filter": {
+            "recent": "Recente projecten"
+        },
+        "project-filter-title": {
+            "recent": "Alleen recente projecten tonen"
         }
     },
     "en": {
@@ -77,6 +84,7 @@
             "sprint-subtitle": "Sprint #%s",
             "sprint-project": "View most recent sprint of this project",
             "sprint-view": "View sprint (if you have access)",
+            "project-title": "View prediction for the latest sprint of project %s",
             "error-files": "Could not load files list: %s",
             "error-prediction": "Could not load prediction data: %s",
             "error-projects": "Could not load projects list: %s",
@@ -103,6 +111,12 @@
             "model": "Model",
             "labels": "Target",
             "label": "Expectation"
+        },
+        "project-filter": {
+            "recent": "Recent projects"
+        },
+        "project-filter-title": {
+            "recent": "Only show recent projects"
         }
     }
 }
