@@ -3,7 +3,7 @@
 @import "node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-regular";
 @import "node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-solid";
 @import "node_modules/bulma/bulma";
-@import "node_modules/balloon-css/src/balloon";
+@import "node_modules/bulma-tooltip/dist/css/bulma-tooltip";
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -17,6 +17,10 @@ body {
 
 #header h1 {
     padding: 1.5rem;
+}
+
+.tabs {
+	overflow: visible;
 }
 
 .tabs ul {
@@ -55,4 +59,13 @@ article.section {
 
 span.tags {
     display: inline;
+}
+
+.tooltip {
+	&::before, &::after {
+		transition: opacity .5s ease;
+		opacity: 0;
+      	content: '';
+		position: absolute;
+	}
 }

@@ -32,7 +32,7 @@
 
         <div id="branches-dropdown" class="dropdown is-hidden is-hoverable">
           <div class="dropdown-trigger">
-            <button class="button is-link is-outlined" aria-haspopup="true" aria-controls="branches-menu" data-message-title="branches-dropdown-title">
+            <button class="button is-link is-outlined tooltip" aria-haspopup="true" aria-controls="branches-menu" data-message-data-tooltip="branches-dropdown-title">
               <span data-message="branches-dropdown">Branches</span>
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -65,7 +65,7 @@
             <div class="columns">
               <div class="column is-half">
                 <h4 class="subtitle">
-                  <a id="name" data-link-template="{$&jira_url}/secure/{$#board_id}GHLocateSprintOnBoard.jspa?sprintId={$id}&rapidViewId={$board_id}{$/board_id}{$^board_id}GHGoToBoard.jspa?sprintId={$id}{$/board_id}" data-link-value="id" data-message-title="sprint-view"></a> (<span id="start_date"></span> - <span id="end_date"></span>) <span class="tags" id="tags" data-show="tags"><span class="tag" id="tags-template" data-localization="tags"></span></span>
+                  <a id="name" class="tooltip" data-link-template="{$&jira_url}/secure/{$#board_id}GHLocateSprintOnBoard.jspa?sprintId={$id}&rapidViewId={$board_id}{$/board_id}{$^board_id}GHGoToBoard.jspa?sprintId={$id}{$/board_id}" data-link-value="id" data-message-data-tooltip="sprint-view"></a> (<span id="start_date"></span> - <span id="end_date"></span>) <span class="tags" id="tags" data-show="tags"><span class="tag" id="tags-template" data-localization="tags"></span></span>
                 </h4>
 
                 <div class="columns">
@@ -90,12 +90,10 @@
                       <p data-message="risk-header">
                         Risk 
                         <span
-                          class="icon is-small"
-                          data-balloon="Percentage that indicates the risk associated with the current sprint, i.e., whether it is going to end with
+                          class="icon is-small tooltip is-tooltip-multiline"
+                          data-tooltip="Percentage that indicates the risk associated with the current sprint, i.e., whether it is going to end with
                            the predicted classification. This is based on internal activations of the model, with a scale that is
                            normalized outside of the model, in contrast to the other metrics."
-                          data-balloon-pos="up"
-                          data-balloon-length="large"
                           >
                           <i class="fas fa-info-circle"></i>
                         </span>
@@ -108,12 +106,10 @@
                 <article class="section" data-show="probability">
                   <p data-message="reliability-header">Reliability
                     <span
-                      class="icon is-small"
-                      data-balloon="Percentage of reliability of the prediction according to the model itself. This value is strongly dependent on the
+                      class="icon is-small tooltip is-tooltip-multiline"
+                      data-tooltip="Percentage of reliability of the prediction according to the model itself. This value is strongly dependent on the
                        model's behavior, especially how many steps it has been trained. For example, during a long training step,
                        this almost always is 100."
-                      data-balloon-pos="up"
-                      data-balloon-length="large"
                       >
                       <i class="fas fa-info-circle"></i>
                     </span>
@@ -160,10 +156,10 @@
                   <ul id="analogies">
                     <li id="analogies-template" data-message="analogies-sprint">
                       Sprint #<span class="item-sprint"></span>:
-                      <a class="item-name" data-link-template="{$&jira_url}/secure/{$#board_id}GHLocateSprintOnBoard.jspa?sprintId={$id}&rapidViewId={$board_id}{$/board_id}{$^board_id}GHGoToBoard.jspa?sprintId={$id}{$/board_id}" data-link-value="id" data-message-title="sprint-view"></a>
+                      <a class="item-name tooltip" data-link-template="{$&jira_url}/secure/{$#board_id}GHLocateSprintOnBoard.jspa?sprintId={$id}&rapidViewId={$board_id}{$/board_id}{$^board_id}GHGoToBoard.jspa?sprintId={$id}{$/board_id}" data-link-value="id" data-message-data-tooltip="sprint-view"></a>
                       (<span class="item-start_date"></span> -
                       <span class="item-end_date"></span>)
-                      from project <a class="item-project" data-link-template="{$&navLink}{$&project_id}" data-link-value="project_id" data-message-title="sprint-project"></a>
+                      from project <a class="item-project tooltip" data-link-template="{$&navLink}{$&project_id}" data-link-value="project_id" data-message-data-tooltip="sprint-project"></a>
                       which has the actual value <span class="item-label"></span>
                       and the features <span class="item-features" data-localization="units">?</span>
                       <span class="tags item-tags"><span class="tag item-tags-template" data-localization="tags"></span></span>
