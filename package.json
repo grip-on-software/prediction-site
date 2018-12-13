@@ -7,6 +7,7 @@
     "production": "cross-env NODE_ENV=production webpack --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
+    "babel-plugin-istanbul": "^5.1.0",
     "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.2.2",
     "html-webpack-plugin": "^3.2.0",
