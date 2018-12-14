@@ -69,4 +69,9 @@ span.tags {
       	content: '';
 		position: absolute;
 	}
+    &.is-tooltip-center {
+        &::before {
+            text-align: center;
+        }
+    }
 }
