@@ -11,22 +11,34 @@ pipeline {
     }
     triggers {
         gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All')
+        cron('H H * * H/3')
     }
 
     post {
         success {
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'public', reportFiles: 'index.html', reportName: 'Visualization', reportTitles: ''])
-            updateGitlabCommitStatus name: env.JOB_NAME, state: 'success'
         }
         failure {
             updateGitlabCommitStatus name: env.JOB_NAME, state: 'failed'
         }
+        aborted {
+            updateGitlabCommitStatus name: env.JOB_NAME, state: 'canceled'
+        }
     }
 
     stages {
-        stage('Build') {
+        stage('Start') {
+            when {
+                expression {
+                    currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                }
+            }
             steps {
                 updateGitlabCommitStatus name: env.JOB_NAME, state: 'running'
+            }
+        }
+        stage('Build') {
+            steps {
                 sh 'docker build -t $DOCKER_REGISTRY/gros-prediction-site .  --build-arg NPM_REGISTRY=$NPM_REGISTRY'
             }
         }
@@ -56,6 +68,16 @@ pipeline {
                     sh 'ln -s /usr/src/app/node_modules .'
                     sh 'npm run production -- --env.mixfile=$PWD/webpack.mix.js'
                 }
+            }
+        }
+        stage('Status') {
+            when {
+                expression {
+                    currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                }
+            }
+            steps {
+                updateGitlabCommitStatus name: env.JOB_NAME, state: 'success'
             }
         }
     }
