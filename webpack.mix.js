@@ -10,7 +10,12 @@ if (!fs.existsSync(config)) {
     config = path.resolve(__dirname, 'lib/config.json');
 }
 
-const configuration = JSON.parse(fs.readFileSync(config));
+const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
+    value => value.replace('$organization',
+        typeof process.env.VISUALIZATION_ORGANIZATION !== 'undefined' ?
+        process.env.VISUALIZATION_ORGANIZATION : ''
+    )
+);
 
 Mix.paths.setRootPath(__dirname);
 mix.setPublicPath('public/')
