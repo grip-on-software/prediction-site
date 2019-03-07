@@ -1,5 +1,6 @@
 const fs = require('fs'),
       mix = require('laravel-mix'),
+      _ = require('lodash'),
       HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let config = process.env.PREDICTION_CONFIGURATION;
