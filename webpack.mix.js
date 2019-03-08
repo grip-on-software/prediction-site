@@ -17,6 +17,8 @@ const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
         process.env.VISUALIZATION_ORGANIZATION : ''
     )
 );
+const configAlias = path.resolve(__dirname, 'config-alias.json');
+fs.writeFileSync(configAlias, JSON.stringify(configuration));
 
 Mix.paths.setRootPath(__dirname);
 mix.setPublicPath('public/')
@@ -62,7 +64,7 @@ mix.setPublicPath('public/')
         ],
         resolve: {
             alias: {
-                'config.json$': config
+                'config.json$': configAlias
             }
         }
     });
