@@ -12,7 +12,7 @@ if (!fs.existsSync(config)) {
 }
 
 const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
-    value => value.replace('$organization',
+    value => value.replace(/\$organization/g,
         typeof process.env.VISUALIZATION_ORGANIZATION !== 'undefined' ?
         process.env.VISUALIZATION_ORGANIZATION : ''
     )
