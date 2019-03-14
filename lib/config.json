@@ -4,6 +4,8 @@
     "path": ".",
     "language": "en",
     "branches_url": "/branches",
+    "branches_filter": "",
+    "branches_alter": "",
     "branch_url": "/branch",
     "master_url": "/show",
     "files_url": "/files",
