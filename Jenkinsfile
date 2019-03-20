@@ -11,7 +11,7 @@ pipeline {
     }
     triggers {
         gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All')
-        cron('H H * * H/3')
+        cron(env.VISUALIZATION_CRON)
     }
 
     post {
