@@ -11,11 +11,22 @@ if (!fs.existsSync(config)) {
     config = path.resolve(__dirname, 'lib/config.json');
 }
 
-const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
-    value => value.replace(/\$organization/g,
-        typeof process.env.VISUALIZATION_ORGANIZATION !== 'undefined' ?
+const replaceParams = value => value.replace(/\$organization/g,
+    typeof process.env.VISUALIZATION_ORGANIZATION !== 'undefined' ?
         process.env.VISUALIZATION_ORGANIZATION : ''
-    )
+);
+const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
+    value => {
+        if (_.isString(value)) {
+            return replaceParams(value);
+        }
+        if (typeof process.env.VISUALIZATION_ORGANIZATION !== 'undefined' &&
+            value[process.env.VISUALIZATION_ORGANIZATION]
+        ) {
+            return replaceParams(value[process.env.VISUALIZATION_ORGANIZATION]);
+        }
+        return replaceParams(value.default ? value.default : value);
+    }
 );
 const configAlias = path.resolve(__dirname, 'config-alias.json');
 fs.writeFileSync(configAlias, JSON.stringify(configuration));
