@@ -1,222 +1,224 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Prediction</title>
+<html lang="en">
+    <head>
+        <title data-message="prediction-title">Prediction</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
-    <link rel="stylesheet" href="{{ visualization_url }}navbar.css">
-  </head>
-  <body>
-    <nav class="navbar is-link" role="navigation"
-    aria-label="main navigation" id="navbar">
-    </nav>
-    <div id="header">
-      <div class="container">
-        <h1 class="title" data-message="prediction-title">Prediction</h1>
-      </div>
-    </div>
-
-    <div class="container">
-      <section class="section is-small">
-        <!-- Project navigation -->
-        <div class="columns">
-          <div class="column">
-            <div id="navigation" class="tabs is-toggle">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ visualization_url }}navbar.css">
+    </head>
+    <body>
+        <nav class="navbar is-link" role="navigation"
+                                    aria-label="main navigation" id="navbar">
+        </nav>
+        <main role="main">
+        <div id="header">
+            <div class="container">
+                <h1 class="title" data-message="prediction-title">Prediction</h1>
             </div>
-          </div>
-          <div class="column is-narrow">
-            <div id="filter">
-            </div>
-          </div>
         </div>
 
-        <div id="branches-dropdown" class="dropdown is-hidden is-hoverable">
-          <div class="dropdown-trigger">
-            <button class="button is-link is-outlined tooltip" aria-haspopup="true" aria-controls="branches-menu" data-message-data-tooltip="branches-dropdown-title">
-              <span data-message="branches-dropdown">Branches</span>
-              <span class="icon is-small">
-                <i class="fas fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
-          <div class="dropdown-menu" id="branches-menu" role="menu">
-            <div class="dropdown-content" id="branches">
-            </div>
-          </div>
-        </div>
-
-        <div id="prediction-error-message" class="notification is-danger is-hidden"></div> 
-      </section>
-    </div>
-
-    <div id="prediction-container">
-      <div id="overview" class="is-hidden">
         <div class="container">
-          <section class="section">
-            <div class="columns">
-              <div class="column is-half">
-                <h2 class="title"><span id="project"></span></h2>
+            <section class="section is-small">
+                <!-- Project navigation -->
                 <div class="columns">
-                  <div class="column is-narrow">
-                    <h3 class="subtitle" data-message="sprint-subtitle" data-show="sprint">Sprint #<span id="sprint"></span></h3>
-                  </div>
-                  <div class="column">
-                    <div class="tabs is-toggle is-small">
-                      <ul id="sprints"></ul>
+                    <div class="column">
+                        <div id="navigation" class="tabs is-toggle">
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div class="column is-half" id="branches-target">
-              </div>
-            </div>
-
-            <div class="columns">
-              <div class="column is-half">
-                <h4 class="subtitle">
-                  <a id="name" data-link-class="tooltip" data-link-template="{$#jira_url}{$&jira_url}/secure/{$#board_id}GHLocateSprintOnBoard.jspa?sprintId={$id}&rapidViewId={$board_id}{$/board_id}{$^board_id}GHGoToBoard.jspa?sprintId={$id}{$/board_id}{$/jira_url}" data-link-value="id" data-message-data-tooltip="sprint-view"></a> <span data-show="start_date">(<span id="start_date"></span> - <span id="end_date"></span>)</span> <span class="tags" id="tags" data-show="tags"><span class="tag" id="tags-template" data-localization="tags"></span></span>
-                </h4>
-
-                <div class="columns">
-                  <div class="column is-half" data-show="prediction">
-                    <article id="message-prediction" class="message is-primary">
-                      <div class="message-header">
-                        <p data-message="prediction-header">Prediction</p>
-                      </div>
-                      <div class="message-body">
-                        <span id="prediction" data-localization-key="labels" data-localization-value="units" data-configuration="binary">
-                          <span id="prediction-0" class="is-success" data-message="prediction-ok">All OK</span>
-                          <span id="prediction-1" class="is-warning" data-message="prediction-warning">Risks exist</span>
-                        </span>
-                      </div>
-                    </article>
-                  </div>
+                    <div class="column is-narrow">
+                        <div id="filter">
+                        </div>
+                    </div>
                 </div>
 
-                <div class="columns" data-show="risk">
-                  <div class="column is-three-quarters">
-                    <article class="section">
-                      <p data-message="risk-header">
-                        Risk 
-                        <span
-                          class="icon is-small tooltip is-tooltip-multiline"
-                          data-tooltip="Percentage that indicates the risk associated with the current sprint, i.e., whether it is going to end with
-                           the predicted classification. This is based on internal activations of the model, with a scale that is
-                           normalized outside of the model, in contrast to the other metrics."
-                          >
-                          <i class="fas fa-info-circle"></i>
-                        </span>
-                        <progress id="risk" class="progress" value="0" max="100">0%</progress>
-                      </p>
-                    </article>
-                  </div>
+                <div id="branches-dropdown" class="dropdown is-hidden is-hoverable">
+                    <div class="dropdown-trigger">
+                        <button class="button is-link is-outlined tooltip" aria-haspopup="true" aria-controls="branches-menu" data-message-data-tooltip="branches-dropdown-title">
+                            <span data-message="branches-dropdown">Branches</span>
+                            <span class="icon is-small">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="branches-menu" role="menu">
+                        <div class="dropdown-content" id="branches">
+                        </div>
+                    </div>
                 </div>
 
-                <article class="section" data-show="probability">
-                  <p data-message="reliability-header">Reliability
-                    <span
-                      class="icon is-small tooltip is-tooltip-multiline"
-                      data-tooltip="Percentage of reliability of the prediction according to the model itself. This value is strongly dependent on the
-                       model's behavior, especially how many steps it has been trained. For example, during a long training step,
-                       this almost always is 100."
-                      >
-                      <i class="fas fa-info-circle"></i>
-                    </span>
-
-                    <span id="probability">%</span>
-                  </p>
-                </article>
-
-                <article class="section" data-show="sources">
-                  <p data-message="sources-header">Source age</p>
-                  <table id="sources" class="table is-bordered" data-localization="sources">
-                    <thead>
-                      <tr>
-                        <th data-message="source-name">Name</th>
-                        <th data-message="source-value">Age</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                </article>
-              </div>
-              <div class="column is-half" data-show="features">
-                <h2 class="subtitle" data-message="features-header">Features</h2>
-
-                <table id="features" class="table is-bordered" data-localization="features" data-localization-value="short_units">
-                  <thead>
-                    <tr>
-                      <th data-message="features-name">Name</th>
-                      <th data-message="features-value">Value</th>
-                    </tr>
-                  </thead>
-                  <tbody></tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-
-          <section class="section">
-            <div class="columns">
-              <div class="column" data-show="analogies">
-                <h2 class="subtitle" data-message="analogies-header">Similar sprints</h2>
-
-                <div class="content" data-message="analogies-content">
-                  <ul id="analogies">
-                    <li id="analogies-template" data-message="analogies-sprint">
-                      Sprint #<span class="item-sprint"></span>:
-                      <a class="item-name" data-link-class="tooltip" data-link-template="{$#jira_url}{$&jira_url}/secure/{$#board_id}GHLocateSprintOnBoard.jspa?sprintId={$id}&rapidViewId={$board_id}{$/board_id}{$^board_id}GHGoToBoard.jspa?sprintId={$id}{$/board_id}{$/jira_url}" data-link-value="id" data-message-data-tooltip="sprint-view"></a>
-                      (<span class="item-start_date"></span> -
-                      <span class="item-end_date"></span>)
-                      from project <a class="item-project tooltip" data-link-template="{$&navLink}{$&project_id}" data-link-value="project_id" data-message-data-tooltip="sprint-project"></a>
-                      which has the actual value <span class="item-label"></span>
-                      and the features <span class="item-features" data-localization="units">?</span>
-                      <span class="tags item-tags"><span class="tag item-tags-template" data-localization="tags"></span></span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="column" data-show="metrics">
-                <h2 class="subtitle" data-message="metrics-header">Metrics</h2>
-
-                <table id="metrics" class="table is-bordered">
-                  <thead>
-                    <tr>
-                      <th data-message="metrics-name">Name</th>
-                      <th data-message="metrics-value">Value</th>
-                    </tr>
-                  </thead>
-                  <tbody></tbody>
-                </table>
-              </div>
-              <div class="column">
-                <h2 class="subtitle" data-message="configuration-header">Configuration</h2>
-
-                <table id="configuration" class="table is-bordered">
-                  <thead>
-                    <tr>
-                      <th data-message="configuration-name">Name</th>
-                      <th data-message="configuration-value">Value</th>
-                    </tr>
-                  </thead>
-                  <tbody></tbody>
-                </table>
-              </div>
-            </div>
-          </section>
+                <div id="prediction-error-message" class="notification is-danger is-hidden"></div> 
+            </section>
         </div>
-      </div>
-    </div>
 
-    <div class="container">
-      <section class="section">
-        <h2 id="files-title" class="subtitle is-hidden" data-message="files-header">Documents</h2>
-        <div id="files-error-message" class="notification is-danger is-hidden"></div>
-        <div id="files"></div>
-      </section>
-    </div>
+        <div id="prediction-container">
+            <div id="overview" class="is-hidden">
+                <div class="container">
+                    <section class="section">
+                        <div class="columns">
+                            <div class="column is-half">
+                                <h2 class="title"><span id="project"></span></h2>
+                                <div class="columns">
+                                    <div class="column is-narrow">
+                                        <h3 class="subtitle" data-message="sprint-subtitle" data-show="sprint">Sprint #<span id="sprint"></span></h3>
+                                    </div>
+                                    <div class="column">
+                                        <div class="tabs is-toggle is-small">
+                                            <ul id="sprints"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-half" id="branches-target">
+                            </div>
+                        </div>
 
-    <script type="text/javascript" src="{{ visualization_url }}manifest.js"></script>
-    <script type="text/javascript" src="{{ visualization_url }}vendor.js"></script>
-  </body>
+                        <div class="columns">
+                            <div class="column is-half">
+                                <h4 class="subtitle">
+                                    <a id="name" data-link-class="tooltip" data-link-template="{$#jira_url}{$&jira_url}/secure/{$#board_id}GHLocateSprintOnBoard.jspa?sprintId={$id}&rapidViewId={$board_id}{$/board_id}{$^board_id}GHGoToBoard.jspa?sprintId={$id}{$/board_id}{$/jira_url}" data-link-value="id" data-message-data-tooltip="sprint-view"></a> <span data-show="start_date">(<span id="start_date"></span> - <span id="end_date"></span>)</span> <span class="tags" id="tags" data-show="tags"><span class="tag" id="tags-template" data-localization="tags"></span></span>
+                                </h4>
+
+                                <div class="columns">
+                                    <div class="column is-half" data-show="prediction">
+                                        <article id="message-prediction" class="message is-primary">
+                                            <div class="message-header">
+                                                <p data-message="prediction-header">Prediction</p>
+                                            </div>
+                                            <div class="message-body">
+                                                <span id="prediction" data-localization-key="labels" data-localization-value="units" data-configuration="binary">
+                                                    <span id="prediction-0" class="is-success" data-message="prediction-ok">All OK</span>
+                                                    <span id="prediction-1" class="is-warning" data-message="prediction-warning">Risks exist</span>
+                                                </span>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="columns" data-show="risk">
+                                    <div class="column is-three-quarters">
+                                        <article class="section">
+                                            <p data-message="risk-header">
+                                            Risk 
+                                            <span
+                                               class="icon is-small tooltip is-tooltip-multiline"
+                                               data-tooltip="Percentage that indicates the risk associated with the current sprint, i.e., whether it is going to end with
+                                               the predicted classification. This is based on internal activations of the model, with a scale that is
+                                               normalized outside of the model, in contrast to the other metrics."
+                                               >
+                                               <i class="fas fa-info-circle"></i>
+                                            </span>
+                                            <progress id="risk" class="progress" value="0" max="100">0%</progress>
+                                            </p>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <article class="section" data-show="probability">
+                                    <p data-message="reliability-header">Reliability
+                                    <span
+                                       class="icon is-small tooltip is-tooltip-multiline"
+                                       data-tooltip="Percentage of reliability of the prediction according to the model itself. This value is strongly dependent on the
+                                       model's behavior, especially how many steps it has been trained. For example, during a long training step,
+                                       this almost always is 100."
+                                       >
+                                       <i class="fas fa-info-circle"></i>
+                                    </span>
+
+                                    <span id="probability">%</span>
+                                    </p>
+                                </article>
+
+                                <article class="section" data-show="sources">
+                                    <p data-message="sources-header">Source age</p>
+                                    <table id="sources" class="table is-bordered" data-localization="sources">
+                                        <thead>
+                                            <tr>
+                                                <th data-message="source-name">Name</th>
+                                                <th data-message="source-value">Age</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </article>
+                            </div>
+                            <div class="column is-half" data-show="features">
+                                <h2 class="subtitle" data-message="features-header">Features</h2>
+
+                                <table id="features" class="table is-bordered" data-localization="features" data-localization-value="short_units">
+                                    <thead>
+                                        <tr>
+                                            <th data-message="features-name">Name</th>
+                                            <th data-message="features-value">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <div class="columns">
+                            <div class="column" data-show="analogies">
+                                <h2 class="subtitle" data-message="analogies-header">Similar sprints</h2>
+
+                                <div class="content" data-message="analogies-content">
+                                    <ul id="analogies">
+                                        <li id="analogies-template" data-message="analogies-sprint">
+                                            Sprint #<span class="item-sprint"></span>:
+                                            <a class="item-name" data-link-class="tooltip" data-link-template="{$#jira_url}{$&jira_url}/secure/{$#board_id}GHLocateSprintOnBoard.jspa?sprintId={$id}&rapidViewId={$board_id}{$/board_id}{$^board_id}GHGoToBoard.jspa?sprintId={$id}{$/board_id}{$/jira_url}" data-link-value="id" data-message-data-tooltip="sprint-view"></a>
+                                            (<span class="item-start_date"></span> -
+                                            <span class="item-end_date"></span>)
+                                            from project <a class="item-project tooltip" data-link-template="{$&navLink}{$&project_id}" data-link-value="project_id" data-message-data-tooltip="sprint-project"></a>
+                                            which has the actual value <span class="item-label"></span>
+                                            and the features <span class="item-features" data-localization="units">?</span>
+                                            <span class="tags item-tags"><span class="tag item-tags-template" data-localization="tags"></span></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column" data-show="metrics">
+                                <h2 class="subtitle" data-message="metrics-header">Metrics</h2>
+
+                                <table id="metrics" class="table is-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th data-message="metrics-name">Name</th>
+                                            <th data-message="metrics-value">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                            <div class="column">
+                                <h2 class="subtitle" data-message="configuration-header">Configuration</h2>
+
+                                <table id="configuration" class="table is-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th data-message="configuration-name">Name</th>
+                                            <th data-message="configuration-value">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <section class="section">
+                <h2 id="files-title" class="subtitle is-hidden" data-message="files-header">Documents</h2>
+                <div id="files-error-message" class="notification is-danger is-hidden"></div>
+                <div id="files"></div>
+            </section>
+        </div>
+        </main>
+
+        <script type="text/javascript" src="{{ visualization_url }}manifest.js"></script>
+        <script type="text/javascript" src="{{ visualization_url }}vendor.js"></script>
+    </body>
 </html>
