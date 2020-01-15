@@ -3,7 +3,7 @@
 @import "node_modules/@fortawesome/fontawesome-free/scss/regular";
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid";
 @import "node_modules/bulma/bulma";
-@import "node_modules/bulma-tooltip/dist/css/bulma-tooltip";
+@import "node_modules/bulma-tooltip/src/sass/index";
 @import "node_modules/@gros/visualization-ui/res/index";
 
 body {
@@ -50,8 +50,10 @@ article.section {
 	padding-left: .5ch;
 }
 
-#message-prediction .message-header {
-    color: $dark;
+#message-prediction {
+    .message-header, .message-body {
+        color: $dark;
+    }
 }
 
 .table-icon, .toggle i {
