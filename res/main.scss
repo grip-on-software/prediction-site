@@ -21,7 +21,7 @@ body {
 }
 
 .tabs {
-	overflow: visible;
+    overflow: visible;
 }
 
 .tabs ul {
@@ -44,10 +44,10 @@ article.section {
 }
 
 #branches a.dropdown-item span:not(.branch) {
-	white-space: normal;
+    white-space: normal;
 }
 #branches a.dropdown-item span {
-	padding-left: .5ch;
+    padding-left: .5ch;
 }
 
 #message-prediction {
@@ -57,7 +57,7 @@ article.section {
 }
 
 .table-icon, .toggle i {
-	padding: .75rem .5rem .75rem .25rem;
+    padding: .75rem .5rem .75rem .25rem;
 }
 
 #files a {
@@ -69,13 +69,19 @@ span.tags {
 }
 
 .tooltip {
-	&::before, &::after {
-		transition: opacity .5s ease;
-		opacity: 0;
-      	content: '';
-		position: absolute;
-	}
-    &.is-tooltip-center {
+    &:not(:hover):not(.has-tooltip-active) {
+        &::before, &::after {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    &::before, &::after {
+        transition: opacity .5s ease;
+        opacity: 0;
+        content: '';
+        position: absolute;
+    }
+    &.has-tooltip-center {
         &::before {
             text-align: center;
         }
