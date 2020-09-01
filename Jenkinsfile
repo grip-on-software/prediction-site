@@ -74,7 +74,6 @@ pipeline {
             }
             steps {
                 updateGitlabCommitStatus name: env.JOB_NAME, state: 'success'
-                build job: 'build-visualization-site/$BRANCH_NAME', wait: false
             }
         }
     }
