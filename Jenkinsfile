@@ -5,6 +5,10 @@ pipeline {
         SCANNER_HOME = tool name: 'SonarQube Scanner 3', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     }
 
+    parameters {
+        string(name: 'VISUALIZATION_ORGANIZATION', defaultValue: "${env.VISUALIZATION_ORGANIZATION}", description: 'Organization to build for')
+        booleanParam(name: 'VISUALIZATION_COMBINED', defaultValue: true, description: 'Build for combined visualization')
+    }
     options {
         gitLabConnection('gitlab')
         buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -70,7 +74,7 @@ pipeline {
             }
             steps {
                 updateGitlabCommitStatus name: env.JOB_NAME, state: 'success'
-                build job: 'build-visualization-site/master', wait: false
+                build job: 'build-visualization-site/$BRANCH_NAME', wait: false
             }
         }
     }

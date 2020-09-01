@@ -11,21 +11,32 @@ if (!fs.existsSync(config)) {
     config = path.resolve(__dirname, 'lib/config.json');
 }
 
-const replaceParams = value => value.replace(/\$organization/g,
-    typeof process.env.VISUALIZATION_ORGANIZATION !== 'undefined' ?
+const replaceParams = (value, key, combined=true) => {
+    if (process.env.VISUALIZATION_COMBINED === "true" && combined) {
+        return value.replace(/\/\$organization/g, key === "prediction_url" ?
+            "/combined/$organization" : "/combined");
+    }
+    return value.replace(/\$organization/g,
+        typeof process.env.VISUALIZATION_ORGANIZATION !== 'undefined' ?
         process.env.VISUALIZATION_ORGANIZATION : ''
-);
+    );
+}
 const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
-    value => {
+    (value, key) => {
         if (_.isString(value)) {
-            return replaceParams(value);
+            return replaceParams(value, key);
+        }
+        if (process.env.VISUALIZATION_COMBINED === "true" && value.combined) {
+            return replaceParams(value.combined, key, false);
         }
         if (typeof process.env.VISUALIZATION_ORGANIZATION !== 'undefined' &&
             value[process.env.VISUALIZATION_ORGANIZATION]
         ) {
-            return replaceParams(value[process.env.VISUALIZATION_ORGANIZATION]);
+            return replaceParams(value[process.env.VISUALIZATION_ORGANIZATION],
+                key
+            );
         }
-        return replaceParams(value.default ? value.default : value);
+        return replaceParams(value.default ? value.default : value, key);
     }
 );
 const configAlias = path.resolve(__dirname, 'config-alias.json');
