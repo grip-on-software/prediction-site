@@ -11,9 +11,12 @@ if (!fs.existsSync(config)) {
     config = path.resolve(__dirname, 'lib/config.json');
 }
 
+// Special case for some configuration keys to keep the $organization in the
+// value when building a combined visualization.
+const combinedConfig = new Set(["prediction_url", "branch_url", "master_url"]);
 const replaceParams = (value, key, combined=true) => {
     if (process.env.VISUALIZATION_COMBINED === "true" && combined) {
-        return value.replace(/\/\$organization/g, key === "prediction_url" ?
+        return value.replace(/\/\$organization/g, combinedConfig.has(key) ?
             "/combined/$organization" : "/combined");
     }
     return value.replace(/\$organization/g,
