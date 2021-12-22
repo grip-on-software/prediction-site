@@ -52,12 +52,15 @@
             "dnn": "Diep neuraal netwerk"
         },
         "configuration": {
+            "binary": "Binaire drempelwaarde",
             "weighted": "Herbalanceren",
             "stratified": "Stratificatie",
             "features": "Attributen",
+            "metadata": "Metadata",
             "model": "Model",
             "labels": "Doelwaarde",
-            "label": "Verwachting"
+            "label": "Verwachting",
+            "organizations": "Organisaties"
         },
         "project-filter": {
             "recent": "Recente projecten"
@@ -119,12 +122,15 @@
             "dnn": "Deep neural network"
         },
         "configuration": {
+            "binary": "Binary threshold value",
             "weighted": "Rebalancing",
             "stratified": "Stratification",
             "features": "Attributes",
+            "metadata": "Metadata",
             "model": "Model",
             "labels": "Target",
-            "label": "Expectation"
+            "label": "Expectation",
+            "organizations": "Organizations"
         },
         "project-filter": {
             "recent": "Recent projects"
