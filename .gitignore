@@ -4,7 +4,7 @@ bundle.js.map
 node_modules
 data/
 public/data
-public/branches
+public/branches*
 public/files
 public/fonts
 public/index.html
