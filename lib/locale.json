@@ -59,6 +59,11 @@
             "abe": "Analogie-gebaseerde inspanningsschatting",
             "dnn": "Diep neuraal netwerk"
         },
+        "metadata": {
+            "organization": "Organisatie",
+            "project_id": "Project-identificatiecode",
+            "sprint_id": "Sprint-identificatiecode"
+        },
         "metrics": {
             "auc": "Area Under Curve (ROC)",
             "average_loss": "Gemiddeld verlies per voorbeeld",
@@ -149,6 +154,11 @@
         "model": {
             "abe": "Analogy-based effort estimation",
             "dnn": "Deep neural network"
+        },
+        "metadata": {
+            "organization": "Organization",
+            "project_id": "Project identifier",
+            "sprint_id": "Sprint identifier"
         },
         "metrics": {
             "auc": "Area Under Curve (ROC)",
