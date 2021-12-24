@@ -27,11 +27,13 @@
     "bulma-tooltip": "^2.0.2",
     "cross-env": "^5.2.0",
     "d3": "^5.9.7",
+    "frac": "^1.1.2",
     "javascript-natural-sort": "^0.7.1",
     "lodash": "^4.17.11",
     "mimetype-to-fontawesome": "^2.0.0",
     "moment": "^2.24.0",
     "mustache": "^3.0.1",
-    "sprintf-js": "^1.1.2"
+    "sprintf-js": "^1.1.2",
+    "vulgarities": "0.0.2"
   }
 }
