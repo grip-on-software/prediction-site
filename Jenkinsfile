@@ -62,7 +62,7 @@ pipeline {
                 withCredentials([file(credentialsId: 'prediction-site-config', variable: 'PREDICTION_CONFIGURATION')]) {
                     sh 'rm -rf node_modules/'
                     sh 'ln -s /usr/src/app/node_modules .'
-                    sh 'npm run production -- --env.mixfile=$PWD/webpack.mix.js'
+                    sh 'npm run production -- --env mixfile=$PWD/webpack.mix.js'
                 }
             }
         }
