@@ -20,9 +20,9 @@ const replaceParams = (value, key, combined=true) => {
         return value.replace(/\/\$organization/g, combinedConfig.has(key) ?
             "/combined/$organization" : "/combined");
     }
-    return value.replace(/\$organization/g,
+    return value.replace(/(\/)?\$organization/g,
         typeof process.env.VISUALIZATION_ORGANIZATION !== 'undefined' ?
-        process.env.VISUALIZATION_ORGANIZATION : ''
+        "$1" + process.env.VISUALIZATION_ORGANIZATION : ''
     );
 }
 const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
