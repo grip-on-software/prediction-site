@@ -24,11 +24,13 @@ const replaceParams = (value, key, combined=true) => {
         typeof process.env.VISUALIZATION_ORGANIZATION !== 'undefined' ?
         "$1" + process.env.VISUALIZATION_ORGANIZATION : ''
     );
-}
+};
+
 const testConfiguration = {
     "branches_filter": "",
     "branches_url": "/branches",
-    "files_url": "/files"
+    "files_url": "/files",
+    "papers_url": "/papers"
 };
 const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
     (value, key) => {

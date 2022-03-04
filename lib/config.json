@@ -9,5 +9,6 @@
     "branch_url": "/branch",
     "master_url": "/show",
     "files_url": "/files",
+    "papers_url": "/papers",
     "jira_url": ""
 }
