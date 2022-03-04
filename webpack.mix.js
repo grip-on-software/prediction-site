@@ -27,6 +27,9 @@ const replaceParams = (value, key, combined=true) => {
 }
 const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
     (value, key) => {
+        if (key === "branches_filter" && process.env.NODE_ENV === "test") {
+            return "";
+        }
         if (_.isString(value)) {
             return replaceParams(value, key);
         }
