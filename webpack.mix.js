@@ -25,10 +25,15 @@ const replaceParams = (value, key, combined=true) => {
         "$1" + process.env.VISUALIZATION_ORGANIZATION : ''
     );
 }
+const testConfiguration = {
+    "branches_filter": "",
+    "branches_url": "/branches",
+    "files_url": "/files"
+};
 const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
     (value, key) => {
-        if (key === "branches_filter" && process.env.NODE_ENV === "test") {
-            return "";
+        if (process.env.NODE_ENV === "test" && _.has(testConfiguration, key)) {
+            return testConfiguration[key];
         }
         if (_.isString(value)) {
             return replaceParams(value, key);
