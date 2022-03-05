@@ -28,14 +28,15 @@ const replaceParams = (value, key, combined=true) => {
 
 const testConfiguration = {
     "branches_filter": "",
-    "branches_url": "/branches",
-    "files_url": "/files",
-    "papers_url": "/papers"
+    "branches_url": (configuration) => `${configuration.prediction_url}branches`,
+    "files_url": (configuration) => `${configuration.prediction_url}files`,
+    "papers_url": (configuration) => `${configuration.prediction_url}papers`
 };
 const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
-    (value, key) => {
+    (value, key, object) => {
         if (process.env.NODE_ENV === "test" && _.has(testConfiguration, key)) {
-            return testConfiguration[key];
+            value = _.isFunction(testConfiguration[key]) ?
+                testConfiguration[key](object) : testConfiguration[key];
         }
         if (_.isString(value)) {
             return replaceParams(value, key);
