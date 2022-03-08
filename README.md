@@ -4,8 +4,6 @@ This repository contains a visualization for a human-readable and visual output
 of the predictions generated based on the latest sprint features of the 
 projects from a data set selected from a Grip on Software database.
 
-
-
 ## Configuration
 
 Copy the file `lib/config.json` to `config.json` and adjust environmental 
@@ -20,11 +18,17 @@ settings in that file. The following configuration items are known:
   and domain name, although this is not necessary as it is assumed that the 
   prediction site and prediction data are hosted under the same domain and 
   path. If it does have a domain, then the prediction data may be loaded from 
-  an API there (but only outside of development).
+  an API there (but only outside of development). In a production site, this 
+  will likely have to be an absolute URL (either with protocol or domain name 
+  or with just an absolute path on this server).
 - `path`: The relative path at which the prediction site is made available on 
   the server. This is probably the same as the `prediction_url`, but may be 
   relevant to set to something else, for example if the URL includes a protocol 
-  and domain name.
+  and domain name. For a production site, the default value of the empty string
+  is likely insufficient, as it will not allow relative paths to resources to
+  succeed when a rewritten URL with subpaths is used. It should also not be set
+  to `.` like in other visualizations as this is added as a prefix to some 
+  resource requests, and it should therefore end in a slash if it is not empty.
 - `language`: The language code of the default language of the site.
 - `branches_url`: The URL pointing to a JSON endpoint that specifies the 
   currently available branches of prediction results. If available, the JSON in 
@@ -88,6 +92,10 @@ and then either `npm run watch` to start a development server that also
 refreshes browsers upon code changes, or `npm run production` to create 
 a minimized bundle. The resulting HTML, CSS and JavaScript is made available in 
 the `public` directory.
+
+This repository also contains a `Dockerfile` specification for a Docker image 
+that can perform the installation of the app and dependencies, which allows 
+building the visualization within there.
 
 Within a development or another locally hosted server (where browsers connect 
 to with `localhost` as domain name), prediction data must be placed in the 
