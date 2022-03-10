@@ -29,6 +29,9 @@ settings in that file. The following configuration items are known:
   succeed when a rewritten URL with subpaths is used. It should also not be set
   to `.` like in other visualizations as this is added as a prefix to some 
   resource requests, and it should therefore end in a slash if it is not empty.
+  The path should however not just consist of a slash. Either an empty string
+  or `./` should work within a development context, while in production this is 
+  likely (a variant of) the `prediction_url`.
 - `language`: The language code of the default language of the site.
 - `branches_url`: The URL pointing to a JSON endpoint that specifies the 
   currently available branches of prediction results. If available, the JSON in 
@@ -85,7 +88,7 @@ These can be replaced with the actual organization that the build is for. For
 combined builds, it is prefixed or replaced with `/combined`, depending on 
 which URL configuration it is.
 
-## Running
+## Running, data and deployment
 
 The visualization can be built using Node.js and `npm` by running `npm install` 
 and then either `npm run watch` to start a development server that also 
@@ -103,7 +106,6 @@ to with `localhost` as domain name), prediction data must be placed in the
 analyzed and predicted through runs of the `data-analysis` and `prediction` 
 repositories, specifically the `features.r` analysis script, the `tensor.py` 
 prediction script, and the `sprint_results.r` analysis script, after another. 
-The prediction repository contains a `Jenkinsfile` with appropriate steps.
 
 In a production environment, the configuration must be set in such a way that 
 it provides access to an API-like setup with several endpoints for the 
@@ -112,3 +114,11 @@ metadata), but also for branches of multiple prediction runs and files that are
 made available for background on the predictions. The integrated method of 
 making this possible is through the `visualization-site` repository, which 
 provides the API rewrites.
+
+The `prediction` repository contains a `Jenkinsfile` with appropriate steps for 
+a Jenkins CI deployment to perform the predictions and archive the results, 
+whereas the `Jenkinsfile` in this repository simply builds the visualization. 
+Unlike with other visualizations, the code is also not analyzed using SonarQube 
+in this `Jenkinsfile`, but only in `visualization-site`. This is to avoid 
+double work for the prediction site, which is considered separate from the 
+visualization hub but the tests remain centralized.
