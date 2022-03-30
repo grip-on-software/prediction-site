@@ -96,6 +96,14 @@
         },
         "project-filter-title": {
             "recent": "Alleen recente projecten tonen"
+        },
+        "export": {
+            "api": "API",
+            "json": "JSON"
+        },
+        "export-tooltip": {
+            "api": "API-verzoek voor huidige sprint uitvoeren",
+            "json": "Objectstructuur bekijken"
         }
     },
     "en": {
@@ -195,6 +203,14 @@
         },
         "project-filter-title": {
             "recent": "Only show recent projects"
+        },
+        "export": {
+            "api": "API",
+            "json": "JSON"
+        },
+        "export-tooltip": {
+            "api": "Perform API request for current sprint",
+            "json": "View object structure"
         }
     }
 }
