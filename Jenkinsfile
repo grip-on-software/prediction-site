@@ -54,7 +54,7 @@ pipeline {
         stage('Visualize') {
             agent {
                 docker {
-                    image '$DOCKER_REGISTRY/gros-prediction-site'
+                    image "${env.DOCKER_REGISTRY}/gros-prediction-site"
                     reuseNode true
                 }
             }
