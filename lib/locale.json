@@ -48,6 +48,8 @@
             "branch-default": "(standaard)",
             "branch-labels": "(%s)",
             "branch-same-name": "(%s)",
+            "export-dropdown": "Exporteren",
+            "export-dropdown-title": "Relevante datastructuren bekijken en downloaden",
             "source-link": "Naar de bron van deze eigenschap gaan",
             "source-link-source": "Naar deze bron gaan",
             "sources-header": "Bronouderdom",
@@ -98,12 +100,10 @@
             "recent": "Alleen recente projecten tonen"
         },
         "export": {
-            "api": "API",
-            "json": "JSON"
-        },
-        "export-tooltip": {
-            "api": "API-verzoek voor huidige sprint uitvoeren",
-            "json": "Objectstructuur bekijken"
+            "api": "API-verzoek",
+            "dataset": "Dataset",
+            "json": "JSON-structuur",
+            "openapi": "OpenAPI-specificatie"
         }
     },
     "en": {
@@ -155,6 +155,8 @@
             "branch-default": "(default)",
             "branch-labels": "(%s)",
             "branch-same-name": "(%s)",
+            "export-dropdown": "Export",
+            "export-dropdown-title": "View and download relevant data structures",
             "source-link": "Visit the source of this feature",
             "source-link-source": "Visit this source",
             "sources-header": "Source age",
@@ -205,12 +207,10 @@
             "recent": "Only show recent projects"
         },
         "export": {
-            "api": "API",
-            "json": "JSON"
-        },
-        "export-tooltip": {
-            "api": "Perform API request for current sprint",
-            "json": "View object structure"
+            "api": "API request",
+            "dataset": "Data set",
+            "json": "JSON structure",
+            "openapi": "OpenAPI specification"
         }
     }
 }

@@ -46,8 +46,10 @@ article.section {
 #branches a.dropdown-item span:not(.branch) {
     white-space: normal;
 }
-#branches a.dropdown-item span {
-    padding-left: .5ch;
+#branches, #export-options {
+    a.dropdown-item span {
+        padding-left: .5ch;
+    }
 }
 
 #message-prediction {
