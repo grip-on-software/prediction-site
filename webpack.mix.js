@@ -56,6 +56,9 @@ const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
             value = _.isFunction(testConfiguration[key]) ?
                 testConfiguration[key](object) : testConfiguration[key];
         }
+        if (key === "organizations") {
+            return value;
+        }
         if (_.isString(value)) {
             return replaceParams(value, key);
         }

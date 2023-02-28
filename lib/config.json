@@ -3,6 +3,10 @@
     "prediction_url": "",
     "path": "",
     "language": "en",
+    "organizations": {
+        "en": {},
+        "nl": {}
+    },
     "branches_url": "/branches",
     "branches_filter": "",
     "branches_alter": "",

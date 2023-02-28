@@ -33,6 +33,11 @@ settings in that file. The following configuration items are known:
   or `./` should work within a development context, while in production this is 
   likely (a variant of) the `prediction_url`.
 - `language`: The language code of the default language of the site.
+- `organizations`: An object containing organization names that may exist 
+  within the data set. The keys of this object are language codes, while the 
+  values are nested objects, whose keys are organization identifiers and values 
+  are strings that replace the identifiers within the organization navigation 
+  (for combined data sets) and the configuration.
 - `branches_url`: The URL pointing to a JSON endpoint that specifies the 
   currently available branches of prediction results. If available, the JSON in 
   the response must be an object with a `jobs` key in it, which has an array 
@@ -71,16 +76,16 @@ settings in that file. The following configuration items are known:
 - `jira_url`: The URL pointing to a Jira instance in order to link to sprints. 
   If this is set to an empty string, then sprints are not linked.
 
-All configuration items are strings, but may be objects as well. If they are 
-objects, they may contain keys that are `combined`, `default`, or refer to 
-specific organizations for which the prediction site (and its predictions) is 
-being generated. This allows the configuration file to be used for several 
-builds. Depending on the values of the environment variables 
-`$VISUALIZATION_ORGANIZATION` and `$VISUALIZATION_COMBINED`, the actual 
-configuration selects the organization's entry in the object, the `combined` 
-key's value, or the value for the `default` key. This is mostly helpful for 
-configuration items that may differ per organization, like `branches_filter` 
-and `branches_alter`.
+Unless otherwise specified, all configuration items are strings, but may be 
+objects as well. If they are objects, they may contain keys that are 
+`combined`, `default`, or refer to specific organizations for which the 
+prediction site (and its predictions) is being generated. This allows the 
+configuration file to be used for several builds. Depending on the values of 
+the environment variables `$VISUALIZATION_ORGANIZATION` and 
+`$VISUALIZATION_COMBINED`, the actual configuration selects the organization's 
+entry in the object, the `combined` key's value, or the value for the `default` 
+key. This is mostly helpful for configuration items that may differ per 
+organization, like `branches_filter` and `branches_alter`.
 
 For URLs, another method exists to make them agnostic to organizations. The 
 value is searched for the substring `$organization`, possibly after slashes. 
