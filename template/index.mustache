@@ -34,45 +34,50 @@
                         </div>
                     </div>
                 </div>
-                        
-                <div id="branches-dropdown" class="dropdown is-hidden is-hoverable">
-                    <div class="dropdown-trigger">
-                        <button class="button is-link is-outlined tooltip" aria-haspopup="true" data-message-data-tooltip="branches-dropdown-title">
-                            <span data-message="branches-dropdown">Branches</span>
-                            <span class="icon is-small">
-                                <i class="fas fa-angle-down fa-sm" aria-hidden="true"></i>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="dropdown-menu" id="branches-menu">
-                        <div class="dropdown-content" id="branches">
-                        </div>
-                    </div>
-                </div>
-
-                <div id="export-dropdown" class="dropdown is-hidden is-hoverable">
-                    <div class="dropdown-trigger">
-                        <button class="button is-link is-outlined tooltip" aria-haspopup="true" data-message-data-tooltip="export-dropdown-title">
-                            <span data-message="export-dropdown">Export</span>
-                            <span class="icon is-small">
-                                <i class="fas fa-angle-down fa-sm" aria-hidden="true"></i>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="dropdown-menu" id="export-menu">
-                        <div class="dropdown-content" id="export-options">
-                        </div>
-                    </div>
-                </div>
 
                 <div id="prediction-error-message" class="notification is-danger has-text-black-bis is-hidden"></div>
+
+                <div class="columns">
+                    <div class="column is-narrow">
+                        <div id="branches-dropdown" class="dropdown is-hidden is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button is-link is-outlined tooltip" aria-haspopup="true" data-message-data-tooltip="branches-dropdown-title">
+                                    <span data-message="branches-dropdown">Branches</span>
+                                    <span class="icon is-small">
+                                        <i class="fas fa-angle-down fa-sm" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="branches-menu">
+                                <div class="dropdown-content" id="branches">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-narrow">
+                        <div id="export-dropdown" class="dropdown is-hidden is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button is-link is-outlined tooltip" aria-haspopup="true" data-message-data-tooltip="export-dropdown-title">
+                                    <span data-message="export-dropdown">Export</span>
+                                    <span class="icon is-small">
+                                        <i class="fas fa-angle-down fa-sm" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="export-menu">
+                                <div class="dropdown-content" id="export-options">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
 
         <div id="prediction-container">
             <div id="overview" class="is-hidden">
                 <div class="container">
-                    <section class="section">
+                    <section class="section is-small">
                         <div class="columns">
                             <div class="column is-half">
                                 <h2 class="title"><span id="project"></span></h2>
@@ -177,7 +182,7 @@
                         </div>
                     </section>
 
-                    <section class="section">
+                    <section class="section is-small">
                         <div class="columns">
                             <div class="column" data-show="analogies">
                                 <h3 class="subtitle" data-message="analogies-header">Similar sprints</h3>
