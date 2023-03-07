@@ -75,6 +75,7 @@ const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
         return replaceParams(value.default ? value.default : value, key);
     }
 );
+configuration.combined = process.env.VISUALIZATION_COMBINED === "true";
 const configAlias = path.resolve(__dirname, 'config-alias.json');
 fs.writeFileSync(configAlias, JSON.stringify(configuration));
 
