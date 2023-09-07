@@ -53,12 +53,17 @@ settings in that file. The following configuration items are known:
   the names of branches from the `branches_url` endpoint. Branch names that 
   match the pattern have the matching part removed from the name. This may be 
   useful for stripping organization names from branch names.
-- `branch_url`: The URL prefix to use when referring to a specific branch 
-  within the visualization site. The prefix is an absolute path and should 
-  contain the `path` due to this as well.
-- `master_url`: The URL prefix to use when referring to the default branch 
-  within the visualization site. The prefix is an absolute path and should 
-  contain the `path` due to this as well.
+- `branch_url`: The URL portion to use when referring to a specific branch 
+  within the visualization site. The URL is an absolute path and should contain 
+  the `path` due to this as well. For URLs using query strings, this should end 
+  with the start of the `project` query parameter, and the branch name is added 
+  to the URL at the location of the `$branch` variable. For path-based URLs, 
+  the branch name is appended after an additional slash at the end.
+- `master_url`: The URL portion to use when referring to the default branch 
+  within the visualization site. The URL is an absolute path and should contain 
+  the `path` due to this as well. For URLs using query strings, this should end 
+  with the start of the `project` query parameter. For path-based URLs, an 
+  additional slash will be appended when necessary.
 - `files_url`: The URL pointing to a JSON endpoint that specifies the files 
   available as additional resources aside from the prediction data. If 
   available, the JSON in the response must be an object with the `files` key in 
@@ -92,6 +97,14 @@ value is searched for the substring `$organization`, possibly after slashes.
 These can be replaced with the actual organization that the build is for. For 
 combined builds, it is prefixed or replaced with `/combined`, depending on 
 which URL configuration it is.
+
+Many of the URL configuration items should work with a standalone, development 
+run of the prediction site, using query parameters to pass through selections. 
+However, for a production situation, the rewrite rule routing done by 
+visualization-site means specific URLs should be used to create a path-based 
+structure. This requires more fine-tuning, in particular for the `branch_url` 
+and `master_url`, and through the use of the organization-specific and agnostic 
+configuration items mentioned before.
 
 ## Running, data and deployment
 
