@@ -104,7 +104,8 @@
             "api": "API-verzoek",
             "dataset": "Dataset",
             "json": "JSON-structuur",
-            "openapi": "OpenAPI-specificatie"
+            "openapi": "OpenAPI-specificatie",
+            "archive": "Gearchiveerde dataset"
         }
     },
     "en": {
@@ -212,7 +213,8 @@
             "api": "API request",
             "dataset": "Data set",
             "json": "JSON structure",
-            "openapi": "OpenAPI specification"
+            "openapi": "OpenAPI specification",
+            "archive": "Archived data set"
         }
     }
 }

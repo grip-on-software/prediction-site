@@ -84,6 +84,9 @@ settings in that file. The following configuration items are known:
   This may either be an OpenAPI JSON document, a Swagger UI instance or another 
   documentation location, preferably an absolute, canonical URL. If this is set 
   to an empty string, then the documentation is not linked.
+- `dataset_archive_url`: The absolute URL pointing to an external archive 
+  website that contains the combined data set for the default branch. If this 
+  is set to an empty string, then the archive is not linked. 
 
 Unless otherwise specified, all configuration items are strings, but may be 
 objects as well. If they are objects, they may contain keys that are 

@@ -15,5 +15,6 @@
     "files_url": "/files",
     "papers_url": "/papers",
     "jira_url": "",
-    "openapi_url": ""
+    "openapi_url": "",
+    "dataset_archive_url": ""
 }
