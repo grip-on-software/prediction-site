@@ -2,6 +2,10 @@
   "name": "@gros/prediction-site",
   "version": "0.0.1",
   "description": "Human-readable output of sprint predictions.",
+  "keywords": [
+      "visualization",
+      "decision-support"
+  ],
   "license": "Apache-2.0",
   "author": "Leon Helwerda <l.s.helwerda@liacs.leidenuniv.nl>",
   "files": [
@@ -13,7 +17,8 @@
       "public/*.js.LICENSE.txt",
       "public/fonts/",
       "public/mix-manifest.json",
-      "res/*.scss"
+      "res/*.scss",
+      "template/*.mustache"
   ],
   "directories": {
       "dist": "public",
