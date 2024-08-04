@@ -80,6 +80,10 @@ settings in that file. The following configuration items are known:
   contain the `path` as well.
 - `jira_url`: The URL pointing to a Jira instance in order to link to sprints. 
   If this is set to an empty string, then sprints are not linked.
+- `openapi_url`: The URL pointing to the specification of the prediction API. 
+  This may either be an OpenAPI JSON document, a Swagger UI instance or another 
+  documentation location, preferably an absolute, canonical URL. If this is set 
+  to an empty string, then the documentation is not linked.
 
 Unless otherwise specified, all configuration items are strings, but may be 
 objects as well. If they are objects, they may contain keys that are 
